@@ -25,20 +25,6 @@ public class Element {
     private int ypos;
     private ArrayList<Integer> shells;
 
-
-
-    //constructors
-    public Element(){
-        this.name = name;
-    }
-    public Element(int number){
-        this.number = number;
-    }
-    public Element(String name, int number){
-        this.name = name;
-        this.number = number;
-    }
-    public Element(String str){}
     public Element(String name, String appearance, double atomic_mass, double boil, String category, String color, double density, String discovered_by, double melt, double molar_heat, String named_by, int number, int period, String phase, String source, String spectral_img, String summary, String symbol, int xpos, int ypos, ArrayList<Integer> shells) {
         this.name = name;
         this.appearance = appearance;
@@ -62,6 +48,8 @@ public class Element {
         this.ypos = ypos;
         this.shells = shells;
     }
+//constructors
+
 
     public String getName(){
     return name;

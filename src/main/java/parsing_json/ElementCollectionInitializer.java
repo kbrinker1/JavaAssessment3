@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.lang.reflect.Array;
 import java.lang.reflect.Type;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class ElementCollectionInitializer {
@@ -34,10 +35,12 @@ public class ElementCollectionInitializer {
     }
 
     public static ElementCollection generate() {
-       Gson gson = new Gson();
+        ElementCollection elementCollection = new ElementCollection();
+        Gson gson = new Gson();
         String json = new ElementCollectionInitializer().loadFile();
-        ElementCollection elements = gson.fromJson(json, ElementCollection.class);
-        return elements;
+        Element[] elements = gson.fromJson(json, Element[].class);
+        Collections.addAll(elementCollection, elements);
+        return elementCollection;
 
     }
 }

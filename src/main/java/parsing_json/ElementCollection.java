@@ -5,14 +5,26 @@ import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ElementCollection extends ArrayList {
-    Element element = new Element();
+public class ElementCollection extends ArrayList<Element> {
+
 
     public Element findByAtomicNumber(int atomic_number) {
+       for(int i = 0; i < this.size(); i++){
+           if(this.get(i).getNumber() == atomic_number){
+               return this.get(i);
+           }
+
+       }
        return null;
     }
 
     public Element findByName(String name) {
+        for(int i = 0; i < this.size(); i++){
+            if(this.get(i).getName().equals(name)){
+                return this.get(i);
+            }
+
+        }
         return null;
     }
 
@@ -45,9 +57,6 @@ public class ElementCollection extends ArrayList {
     private ArrayList<String> splitStringWithRegexPattern(String stringPattern, String inputString) {
         return new ArrayList<String>(Arrays.asList(inputString.split(stringPattern)));
     }
-
-
-
 
     public String elementName(String input) {
        ElementCollectionInitializer eci = new ElementCollectionInitializer();
