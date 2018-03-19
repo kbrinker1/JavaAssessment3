@@ -49,7 +49,7 @@ public class ElementCollection extends ArrayList {
 
 
 
-    public String elementBuilder(ElementCollection ec) {
+    public String elementName(ElementCollection ec) {
        ElementCollectionInitializer eci = new ElementCollectionInitializer();
         StringBuilder found = new StringBuilder();
         String periodicTable = new ElementCollectionInitializer().loadFile();
