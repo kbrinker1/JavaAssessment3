@@ -144,16 +144,32 @@ public class ElementCollectionTest {
         //Index is equal to element on periodic table at i+1
     }
 
-//    @Test
-//    public void testElementName() {
-//        //Given
-//        String arrayindex = "{name=Thallium, appearance=silvery white, atomic_mass=204.38, boil=1746.0, category=post-transition metal, color=null, density=11.85, discovered_by=William Crookes, melt=577.0, molar_heat=26.32, named_by=null, number=81.0, period=6.0, phase=Solid, source=https://en.wikipedia.org/wiki/Thallium, spectral_img=null, summary=Thallium is a chemical element with symbol Tl and atomic number 81. This soft gray post-transition metal is not found free in nature. When isolated, it resembles tin, but discolors when exposed to air., symbol=Tl, xpos=13.0, ypos=6.0, shells=[2.0, 8.0, 18.0, 32.0, 18.0, 3.0]";
-//        String expected = "Thallium";
-//        String actual =
-//        assertEquals(expected, actual );
-//
-//    }
+    @Test
+    public void testElementName() {
+        //Given
+        String arrayindex = "{name=Thallium, appearance=silvery white, atomic_mass=204.38, boil=1746.0, category=post-transition metal, color=null, density=11.85, discovered_by=William Crookes, melt=577.0, molar_heat=26.32, named_by=null, number=81.0, period=6.0, phase=Solid, source=https://en.wikipedia.org/wiki/Thallium, spectral_img=null, summary=Thallium is a chemical element with symbol Tl and atomic number 81. This soft gray post-transition metal is not found free in nature. When isolated, it resembles tin, but discolors when exposed to air., symbol=Tl, xpos=13.0, ypos=6.0, shells=[2.0, 8.0, 18.0, 32.0, 18.0, 3.0]";
+        String expected = "Thallium";
+        String actual = new ElementCollection().elementName(arrayindex);
+        assertEquals(expected, actual);
+    }
 
+    @Test
+    public void testElementAppearance() {
+        //Given
+        String arrayindex = "{name=Thallium, appearance=silvery white, atomic_mass=204.38, boil=1746.0, category=post-transition metal, color=null, density=11.85, discovered_by=William Crookes, melt=577.0, molar_heat=26.32, named_by=null, number=81.0, period=6.0, phase=Solid, source=https://en.wikipedia.org/wiki/Thallium, spectral_img=null, summary=Thallium is a chemical element with symbol Tl and atomic number 81. This soft gray post-transition metal is not found free in nature. When isolated, it resembles tin, but discolors when exposed to air., symbol=Tl, xpos=13.0, ypos=6.0, shells=[2.0, 8.0, 18.0, 32.0, 18.0, 3.0]";
+        String expected = "silvery white";
+        String actual = new ElementCollection().elementAppearance(arrayindex);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testElementNumber() {
+        //Given
+        String arrayindex = "{name=Thallium, appearance=silvery white, atomic_mass=204.38, boil=1746.0, category=post-transition metal, color=null, density=11.85, discovered_by=William Crookes, melt=577.0, molar_heat=26.32, named_by=null, number=81.0, period=6.0, phase=Solid, source=https://en.wikipedia.org/wiki/Thallium, spectral_img=null, summary=Thallium is a chemical element with symbol Tl and atomic number 81. This soft gray post-transition metal is not found free in nature. When isolated, it resembles tin, but discolors when exposed to air., symbol=Tl, xpos=13.0, ypos=6.0, shells=[2.0, 8.0, 18.0, 32.0, 18.0, 3.0]";
+        String expected = "81.0";
+        String actual = new ElementCollection().elementNumber(arrayindex);
+        assertEquals(expected, actual);
+    }
 
 
 }

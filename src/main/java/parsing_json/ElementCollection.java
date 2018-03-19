@@ -49,24 +49,57 @@ public class ElementCollection extends ArrayList {
 
 
 
-    public String elementName(ElementCollection ec) {
+    public String elementName(String input) {
        ElementCollectionInitializer eci = new ElementCollectionInitializer();
         StringBuilder found = new StringBuilder();
-        String periodicTable = new ElementCollectionInitializer().loadFile();
+        String periodicTable = input;
 
-        Pattern p = Pattern.compile("number\": \\d{1,4}");
+        Pattern p = Pattern.compile("name=([a-zA-Z])\\w+");
         Matcher m = p.matcher(periodicTable);
         while (m.find())
-
         {
             if (!m.group().equals("")) {
                 found.append(m.group());
             }
-            String myAtomicNumber = found.toString();
-           return myAtomicNumber;
-
+            String myElementName = found.toString();
+           return myElementName.toString().substring(5);
         }
+        return null;
+    }
 
+    public String elementAppearance(String input) {
+        ElementCollectionInitializer eci = new ElementCollectionInitializer();
+        StringBuilder found = new StringBuilder();
+        String periodicTable = input;
+
+        Pattern p = Pattern.compile("appearance=([a-zA-Z])([^,]+)");
+        Matcher m = p.matcher(periodicTable);
+        while (m.find())
+        {
+            if (!m.group().equals("")) {
+                found.append(m.group());
+            }
+            String myElementName = found.toString();
+            return myElementName.toString().substring(11);
+        }
+        return null;
+    }
+
+    public String elementNumber(String input) {
+        ElementCollectionInitializer eci = new ElementCollectionInitializer();
+        StringBuilder found = new StringBuilder();
+        String periodicTable = input;
+
+        Pattern p = Pattern.compile("number=([^,]+)");
+        Matcher m = p.matcher(periodicTable);
+        while (m.find())
+        {
+            if (!m.group().equals("")) {
+                found.append(m.group());
+            }
+            String myElementName = found.toString();
+            return myElementName.toString().substring(7);
+        }
         return null;
     }
 }
