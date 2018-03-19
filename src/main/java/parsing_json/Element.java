@@ -27,7 +27,18 @@ public class Element {
 
 
 
-
+    //constructors
+    public Element(){
+        this.name = name;
+    }
+    public Element(int number){
+        this.number = number;
+    }
+    public Element(String name, int number){
+        this.name = name;
+        this.number = number;
+    }
+    public Element(String str){}
     public Element(String name, String appearance, double atomic_mass, double boil, String category, String color, double density, String discovered_by, double melt, double molar_heat, String named_by, int number, int period, String phase, String source, String spectral_img, String summary, String symbol, int xpos, int ypos, ArrayList<Integer> shells) {
         this.name = name;
         this.appearance = appearance;
@@ -134,5 +145,11 @@ public class Element {
 
     public ArrayList<Integer> getShells() {
         return shells;
+    }
+
+
+    @Override
+    public String toString(){
+        return "name:" + name + " appearance:" + appearance + " atomic_mass:" + atomic_mass + " boil:" + boil + "category:" + category + "color:" + color + "density:" + density + "discovered_by:" + discovered_by + "melt:" + melt + "molar_heat:" + molar_heat + "named_by:" + named_by + "number:" + number + "period:" + period + "phase:" + phase + "source:" + source + "spectral_img:" + spectral_img + "summary:" + summary + "symbol:" + symbol + "xpos:" + xpos + "ypos:" + ypos + "shells:" + shells;
     }
 }
